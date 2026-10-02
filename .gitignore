@@ -1,5 +1,26 @@
+# Bağımlılıklar
 node_modules/
+
+# Derleme çıktısı
 dist/
+
+# Test çıktıları
+test-results/
+playwright-report/
+
+# Loglar
+*.log
+npm-debug.log*
+
+# Gizli ayarlar
+.env
+.env.*
+
+# Editör
 .vscode/
+.idea/
+
+# İşletim sistemi
 .DS_Store
 Thumbs.db
+Desktop.ini
