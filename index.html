@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08090d" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Hafıza, hız, dikkat, esneklik, problem çözme, matematik ve kelime için 30 kısa beyin oyunu." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="NeuroArcade" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+  <title>NeuroArcade — 30 Beyin Oyunu</title>
+  <link rel="stylesheet" href="./src/games.css" />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+<div class="site" id="app">
+  <header class="nav">
+    <div class="brand"><div class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div><h1>NeuroArcade</h1><p>30 bilişsel mini oyun</p></div></div>
+    <div class="stats">
+      <div class="pill">Oynanan <b id="playedCount">0</b></div>
+      <div class="pill" title="Üst üste oynadığın gün sayısı">🔥 <b id="streak">0</b></div>
+      <div class="pill">XP <b id="xp">0</b></div>
+      <button type="button" class="pill pillBtn" id="progressBtn" aria-label="İlerleme ekranını aç"><b id="lvlName">Çaylak</b> ›</button>
+      <button type="button" class="iconBtn" id="soundBtn" aria-label="Sesi aç/kapat" title="Ses ve titreşim">🔊</button>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="introMain">
+      <span class="kicker"><i></i>Günlük zihin antrenmanı</span>
+      <h2>Zihnini <em>ısıt</em>.<br>Skorunu geç.</h2>
+      <p>Hafıza, hız, dikkat, esneklik, problem çözme, matematik ve kelime için 30 kısa oyun. Hesap yok, kurulum yok; skorların bu tarayıcıda saklanır.</p>
+      <div class="cta"><button class="btn primary" id="quickBtn">Hızlı antrenman</button><button class="btn ghost" id="randomBtn">Rastgele oyun</button></div>
+    </div>
+    <aside class="mission">
+      <span class="eyebrow2">Günün Beyin Turu</span>
+      <h3 id="dailyTitle">—</h3>
+      <p id="dailyText">5 farklı alandan 5 oyun</p>
+      <div class="dots" id="dailyDots" aria-hidden="true"></div>
+      <button class="btn light" id="dailyBtn">Başlat <span aria-hidden="true">→</span></button>
+    </aside>
+  </section>
+
+  <div class="bar">
+    <label class="searchWrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="search" class="search" placeholder="Oyun ara…" autocomplete="off" /></label>
+    <div class="filters" id="filters"></div>
+  </div>
+
+  <section id="games" class="deck"></section>
+  <footer class="foot">NeuroArcade v3.3 · Skorların yalnızca bu tarayıcıda saklanır.</footer>
+</div>
+
+<div id="modal" class="modal"><div class="gameShell"><div class="gameHeader"><div class="title"><button class="btn ghost" id="closeBtn">← Çık</button><div><h2 id="gameTitle">Oyun</h2><div class="meta" id="gameMeta">Kategori · MVP</div></div></div><div class="hud"><span>Skor <b id="score">0</b></span><span>Süre <b id="timer">—</b></span></div></div><div class="gameBody" id="gameBody"><div class="gameIntro" id="intro"></div><div class="livePhase" id="gamePhase"><b>Hazırlanıyor…</b><span>İyi oyun.</span></div><div class="arena" id="arena"></div><div class="feedback" id="feedback"></div></div></div></div>
+<div id="progressModal" class="modal" role="dialog" aria-modal="true" aria-label="İlerleme"><div class="gameShell progressShell"><div class="gameHeader"><div class="title"><button class="btn ghost" id="progressClose">← Kapat</button><div><h2>İlerleme</h2><div class="meta">Seviyen, serin ve beceri haritan</div></div></div></div><div class="gameBody" id="progressBody"></div></div></div>
+<script src="./src/main.js"></script>
+</body>
+</html>
